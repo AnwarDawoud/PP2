@@ -38,7 +38,7 @@ body {
     border: 2px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    min-height: 400px; /* Set a minimum height for the quiz container */
+    min-height: 300px; /* Set a minimum height for the quiz container */
 }
 
 .container {
