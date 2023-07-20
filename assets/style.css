@@ -24,26 +24,19 @@ body {
 }
 
 .quiz-container {
+    position: fixed;
+    top: 200px;
+    /* Adjust the top value to set the distance from the header */
+    left: 0;
+    right: 0;
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100vw;
-    /* Use viewport width */
-    height: 100vh;
-    /* Use viewport height */
     text-align: center;
-    /* Center the quiz content */
-    height: auto;
     border: 2px solid #ccc;
-    margin-top: 300px;
-    /* Add top margin to create space after the header */
-    padding-top: 50px;
-    /* Add padding to accommodate the header */
-    margin-bottom: 150px;
-    /* Add top margin to create space after the header */
-    padding-bottom: 50px
+    padding: 20px;
 }
 
 .container {
@@ -128,6 +121,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1;
+    margin-bottom: 10px;
 }
 
 .logo img {
@@ -165,23 +159,33 @@ footer {
         /* Adjust the container's width for small screens */
         height: auto;
         /* Allow the container to grow in height as needed */
-        margin-top: 40px; /* Add spacing between the quiz-container and the media-section */
+        margin-top: 40px;
+        /* Add spacing between the quiz-container and the media-section */
     }
+
     .center-container {
-        flex-direction: column; /* Center the content vertically on small screens */
+        flex-direction: column;
+        /* Center the content vertically on small screens */
     }
+
     .content-container {
-        flex-direction: column; /* Stack the content on small screens */
-        align-items: center; /* Center the content horizontally on small screens */
-        margin-top: 0; /* Remove the margin-top on small screens */
+        flex-direction: column;
+        /* Stack the content on small screens */
+        align-items: center;
+        /* Center the content horizontally on small screens */
+        margin-top: 0;
+        /* Remove the margin-top on small screens */
     }
-        /* Increase the font size by 2x for medium screens */
+
+    /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 2rem;
     }
+
     #username-container {
         font-size: 1.5rem;
     }
+
     #question-container h2 {
         font-size: 2rem;
     }
@@ -195,15 +199,19 @@ footer {
         /* Adjust the container's width for medium screens */
         height: auto;
         /* Allow the container to grow in height as needed */
-        margin-top: 40px; /* Add spacing between the quiz-container and the media-section */
+        margin-top: 40px;
+        /* Add spacing between the quiz-container and the media-section */
     }
-        /* Increase the font size by 2x for medium screens */
+
+    /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 2rem;
     }
+
     #username-container {
         font-size: 1.5rem;
     }
+
     #question-container h2 {
         font-size: 2rem;
     }
