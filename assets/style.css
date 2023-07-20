@@ -174,7 +174,7 @@ footer {
         flex-direction: column; /* Stack the content on small screens */
         align-items: center; /* Center the content horizontally on small screens */
         margin-top: 0; /* Remove the margin-top on small screens */
-
+    }
         /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 2rem;
@@ -196,7 +196,7 @@ footer {
         height: auto;
         /* Allow the container to grow in height as needed */
         margin-top: 40px; /* Add spacing between the quiz-container and the media-section */
-
+    }
         /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 2rem;
