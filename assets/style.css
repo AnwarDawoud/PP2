@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Layout styles */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 100px;
+    padding-top: 50px;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    background-image: url('/assets/media/pexels-photo-7634760.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    /* Use viewport width */
+    height: 100vh;
+    /* Use viewport height */
+    text-align: center;
+    /* Center the quiz content */
+    height: auto;
+    border: 2px solid #ccc;
+    margin-top: 300px;
+    /* Add top margin to create space after the header */
+    padding-top: 50px;
+    /* Add padding to accommodate the header */
+    margin-bottom: 150px;
+    /* Add top margin to create space after the header */
+    padding-bottom: 50px
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#username-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#username-label {
+    font-weight: bold;
+}
+
+#score-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+
+/* Quiz section styles */
+.correct-feedback {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 60px;
+    /* Set the desired height */
+    overflow-y: auto;
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect-feedback {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 60px;
+    /* Set the desired height */
+    overflow-y: auto;
+    color: red;
+    font-weight: bold;
+}
+
+.no-answer-feedback {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 60px;
+    /* Set the desired height */
+    overflow-y: auto;
+    color: blue;
+    font-weight: bold;
+}
+
+#question-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Header and footer styles */
+header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.logo img {
+    height: 50px;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.score-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#correct-answers {
+    margin-right: 10px;
+}
+
+#wrong-answers {
+    margin-left: 10px;
+}
+
+/* For small devices (e.g., smartphones) */
+@media only screen and (max-width: 600px) {
+    .quiz-container {
+        max-width: 90%;
+        /* Adjust the container's width for small screens */
+        height: auto;
+        /* Allow the container to grow in height as needed */
+    }
+}
+
+/* For medium devices (e.g., tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .quiz-container {
+        max-width: 70%;
+        /* Adjust the container's width for medium screens */
+        height: auto;
+        /* Allow the container to grow in height as needed */
+    }
+}
+
+/* Add spacing between the quiz-container and the media-section */
+.media-section {
+    margin-top: 40px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 5;
+    }
+}
+
+/* Apply the fade-in animation to the final score message */
+#question-container h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Add new CSS for the "pluming stars" effect */
+.star {
+    position: absolute;
+    width: 30px;
+    /* Increase the width and height for bigger stars */
+    height: 30px;
+    background-color: green;
+    clip-path: polygon(50% 0%, 61.8% 20%, 84.1% 29.3%, 68.4% 48.1%, 75.6% 70.7%, 50% 59.4%, 24.4% 70.7%, 31.6% 48.1%, 15.9% 29.3%, 38.2% 20%);
+    animation: twinkle 1s infinite;
+}
+
+@keyframes starPlume {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
