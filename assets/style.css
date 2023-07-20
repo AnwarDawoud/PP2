@@ -165,8 +165,18 @@ footer {
         /* Adjust the container's width for small screens */
         height: auto;
         /* Allow the container to grow in height as needed */
+        margin-top: 40px; /* Add spacing between the quiz-container and the media-section */
+    }
+    .center-container {
+        flex-direction: column; /* Center the content vertically on small screens */
+    }
+    .content-container {
+        flex-direction: column; /* Stack the content on small screens */
+        align-items: center; /* Center the content horizontally on small screens */
+        margin-top: 0; /* Remove the margin-top on small screens */
     }
 }
+
 
 /* For medium devices (e.g., tablets) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -175,6 +185,7 @@ footer {
         /* Adjust the container's width for medium screens */
         height: auto;
         /* Allow the container to grow in height as needed */
+        margin-top: 40px; /* Add spacing between the quiz-container and the media-section */
     }
 }
 
