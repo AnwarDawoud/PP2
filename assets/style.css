@@ -38,6 +38,7 @@ body {
     border: 2px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
+    min-height: 400px; /* Set a minimum height for the quiz container */
 }
 
 .container {
@@ -193,7 +194,6 @@ footer {
     }
 }
 
-
 /* For medium devices (e.g., tablets) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .quiz-container {
@@ -218,7 +218,18 @@ footer {
         font-size: 2rem;
     }
 }
+@media only screen and (min-width: 600px) {
+    .quiz-container {
+        min-height: 500px; /* Set a different minimum height for larger devices */
+    }
+}
 
+/* For devices with width greater than 1024px */
+@media only screen and (min-width: 1024px) {
+    .quiz-container {
+        min-height: 600px; /* Set a different minimum height for even larger devices */
+    }
+}
 /* Add spacing between the quiz-container and the media-section */
 .media-section {
     margin-top: 40px;
