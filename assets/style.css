@@ -13,19 +13,8 @@ body {
     height: 100vh;
 }
 
-.content-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 100%;
-    width: 100%;
-    margin-top: 100px;
-    padding-top: 50px;
-}
-
 .quiz-container {
     position: fixed;
-    
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -37,7 +26,20 @@ body {
     border: 2px solid #ccc;
     padding: 20px;
     margin-bottom: 20px;
-    min-height: 300px; /* Set a minimum height for the quiz container */
+    min-height: 300px;
+}
+
+/* Quiz section styles */
+.quiz-container .correct-feedback {
+    color: green;
+}
+
+.quiz-container .incorrect-feedback {
+    color: red;
+}
+
+.quiz-container .no-answer-feedback {
+    color: blue;
 }
 
 .container {
@@ -55,10 +57,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-#username-label {
-    font-weight: bold;
-}
-
 #score-container {
     display: flex;
     justify-content: space-between;
@@ -66,36 +64,14 @@ h1 {
     margin-bottom: 10px;
 }
 
-
-
 /* Quiz section styles */
-.correct-feedback {
-    text-align: center;
-    margin-bottom: 20px;
-    height: 60px;
-    /* Set the desired height */
-    overflow-y: auto;
-    color: green;
-    font-weight: bold;
-}
-
-.incorrect-feedback {
-    text-align: center;
-    margin-bottom: 20px;
-    height: 60px;
-    /* Set the desired height */
-    overflow-y: auto;
-    color: red;
-    font-weight: bold;
-}
-
+.correct-feedback,
+.incorrect-feedback,
 .no-answer-feedback {
     text-align: center;
     margin-bottom: 20px;
     height: 60px;
-    /* Set the desired height */
     overflow-y: auto;
-    color: blue;
     font-weight: bold;
 }
 
@@ -148,38 +124,37 @@ footer {
 
 #correct-answers {
     margin-right: 10px;
+    color: green;
 }
 
 #wrong-answers {
     margin-left: 10px;
+    color: red
+}
+
+
+#score-message {
+    color: green;
 }
 
 /* For small devices (e.g., smartphones) */
 @media only screen and (max-width: 600px) {
     .quiz-container {
         max-width: 100%;
-        /* Adjust the container's width for small screens */
         height: auto;
-        /* Allow the container to grow in height as needed */
         margin-top: 75px;
-        /* Add spacing between the quiz-container and the media-section */
     }
 
     .center-container {
         flex-direction: column;
-        /* Center the content vertically on small screens */
     }
 
     .content-container {
         flex-direction: column;
-        /* Stack the content on small screens */
         align-items: center;
-        /* Center the content horizontally on small screens */
         margin-top: 0;
-        /* Remove the margin-top on small screens */
     }
 
-    /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 1rem;
     }
@@ -197,14 +172,10 @@ footer {
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .quiz-container {
         max-width: 100%;
-        /* Adjust the container's width for medium screens */
         height: auto;
-        /* Allow the container to grow in height as needed */
         margin-top: 40px;
-        /* Add spacing between the quiz-container and the media-section */
     }
 
-    /* Increase the font size by 2x for medium screens */
     h1 {
         font-size: 2rem;
     }
@@ -217,58 +188,51 @@ footer {
         font-size: 2rem;
     }
 }
-@media only screen and (min-width: 600px) {
-    .quiz-container {
-        min-height: 500px; /* Set a different minimum height for larger devices */
-    }
-}
 
 /* For devices with width greater than 1024px */
 @media only screen and (min-width: 1024px) {
     .quiz-container {
-        min-height: 600px; /* Set a different minimum height for even larger devices */
-    }
-}
-/* Add spacing between the quiz-container and the media-section */
-.media-section {
-    margin-top: 40px;
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+        max-width: 100%;
+        height: auto;
+        margin-top: 100px;
     }
 
-    to {
-        opacity: 5;
+    h1 {
+        font-size: 2rem;
+    }
+
+    #username-container {
+        font-size: 1.5rem;
+    }
+
+    #question-container h2 {
+        font-size: 2rem;
     }
 }
 
-/* Apply the fade-in animation to the final score message */
-#question-container h2 {
-    animation: fadeIn 1s ease-in-out;
+#stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set z-index to place it behind the quiz elements */
 }
 
-/* Add new CSS for the "pluming stars" effect */
 .star {
     position: absolute;
     width: 30px;
-    /* Increase the width and height for bigger stars */
     height: 30px;
     background-color: green;
     clip-path: polygon(50% 0%, 61.8% 20%, 84.1% 29.3%, 68.4% 48.1%, 75.6% 70.7%, 50% 59.4%, 24.4% 70.7%, 31.6% 48.1%, 15.9% 29.3%, 38.2% 20%);
     animation: twinkle 1s infinite;
 }
 
-@keyframes starPlume {
-    from {
+@keyframes twinkle {
+    0%, 100% {
         opacity: 1;
-        transform: translateY(0);
     }
-
-    to {
+    50% {
         opacity: 0;
-        transform: translateY(100vh);
     }
 }
