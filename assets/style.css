@@ -25,8 +25,7 @@ body {
 
 .quiz-container {
     position: fixed;
-    top: 200px;
-    /* Adjust the top value to set the distance from the header */
+    
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -162,7 +161,7 @@ footer {
         /* Adjust the container's width for small screens */
         height: auto;
         /* Allow the container to grow in height as needed */
-        margin-top: 40px;
+        margin-top: 75px;
         /* Add spacing between the quiz-container and the media-section */
     }
 
@@ -182,7 +181,7 @@ footer {
 
     /* Increase the font size by 2x for medium screens */
     h1 {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     #username-container {
