@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             correctAnswer: 'Paris',
             image: 'images/paris.jpg'
         },
+        
         {
             question: 'Which country is known as the "Land of the Rising Sun"?',
             options: ['China', 'Japan', 'Thailand', 'South Korea'],
@@ -196,35 +197,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function displayQuestion() {
-        const currentQuestion = questions[currentQuestionIndex];
+        if (currentQuestionIndex < questions.length) {
+            const currentQuestion = questions[currentQuestionIndex];
 
-        questionContainer.innerHTML = `
-      <div class="question">${currentQuestion.question}</div>
-      <div class="options">
-        ${currentQuestion.options
-                .map(
-                    (option, index) => `
-            <div class="option">
-              <input type="radio" id="option-${index}" name="answer" value="${option}">
-              <label for="option-${index}">${option}</label>
-            </div>
-          `
-                )
-                .join('')}
-      </div>
-    `;
+            questionContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <div class="options">
+                    ${currentQuestion.options
+                    .map(
+                        (option, index) => `
+                                <div class="option">
+                                    <input type="radio" id="option-${index}" name="answer" value="${option}">
+                                    <label for="option-${index}">${option}</label>
+                                </div>
+                            `
+                    )
+                    .join('')}
+                </div>
+            `;
 
-        // Reset feedback message
-        feedbackElement.textContent = '';
+            // Reset feedback message
+            feedbackElement.textContent = '';
 
-        // Show submit button
-        submitButton.style.display = 'block';
+            // Show submit button
+            submitButton.style.display = 'block';
 
-        // Hide next button
-        nextButton.style.display = 'none';
+            // Hide next button
+            nextButton.style.display = 'none';
 
-        // Hide submit quiz button
-        submitQuizButton.style.display = 'none';
+            // Hide submit quiz button
+            submitQuizButton.style.display = 'none';
+        } else {
+            // If all questions are answered, hide the question container
+            questionContainer.style.display = 'none';
+
+            // Hide submit button
+            submitButton.style.display = 'none';
+
+            // Hide next button
+            nextButton.style.display = 'none';
+
+            // Show submit quiz button
+            submitQuizButton.style.display = 'block';
+
+            // Evaluate the quiz and display the final score
+            evaluateQuiz();
+        }
     }
 
     function checkAnswer() {
@@ -253,8 +271,19 @@ document.addEventListener("DOMContentLoaded", function () {
     function createStar() {
         const star = document.createElement('div');
         star.classList.add('star');
-        star.style.left = Math.random() * window.innerWidth + 'px';
-        document.getElementById('stars-container').appendChild(star);
+        const starsContainer = document.getElementById('stars-container');
+        const containerWidth = starsContainer.clientWidth;
+        const containerHeight = starsContainer.clientHeight;
+        const radius = Math.min(containerWidth, containerHeight) * 0.4; // Set the radius of the circle (adjust as needed)
+        const centerX = containerWidth / 2;
+        const centerY = containerHeight / 2;
+        const angle = Math.random() * Math.PI * 2; // Random angle within 0 to 2*pi
+        const starX = centerX + radius * Math.cos(angle);
+        const starY = centerY + radius * Math.sin(angle);
+
+        star.style.left = starX + 'px';
+        star.style.top = starY + 'px';
+        starsContainer.appendChild(star);
 
         // After a delay, remove the star from the DOM
         setTimeout(() => {
@@ -264,7 +293,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showStars() {
         for (let i = 0; i < 50; i++) {
-            setTimeout(createStar, Math.random() * 2000);
+            createStar();
         }
     }
 
@@ -272,11 +301,25 @@ document.addEventListener("DOMContentLoaded", function () {
         // Display the final score message with the pluming stars effect
         const scoreMessage = document.createElement('h2');
         scoreMessage.textContent = `Your final score is ${score} out of 5.`;
+        scoreMessage.id = "score-message";
         document.getElementById('question-container').appendChild(scoreMessage);
 
         if (score >= 4) {
+            scoreMessage.style.color = "green"; // Set to green for scores greater than or equal to 4
             scoreMessage.textContent += ' Well done! Cognates!';
+            showStars(); // Show the pluming stars effect
+            // Remove the correct and incorrect feedback elements
+            const quizContainer = document.querySelector('.quiz-container');
+            const correctFeedback = quizContainer.querySelector('.correct-feedback');
+            const incorrectFeedback = quizContainer.querySelector('.incorrect-feedback');
+            if (correctFeedback) {
+                correctFeedback.remove();
+            }
+            if (incorrectFeedback) {
+                incorrectFeedback.remove();
+            }
         } else {
+            scoreMessage.style.color = "red"; // Set to red for scores less than 4
             scoreMessage.textContent += ' To improve your score, please retake the quiz.';
             submitQuizButton.style.display = 'none';
             resetQuiz();
@@ -292,7 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
             showStars();
         }
     }
-
     function resetQuiz() {
         score = 0;
         correctAnswers = 0;
