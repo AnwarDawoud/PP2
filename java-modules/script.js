@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 document.addEventListener("DOMContentLoaded", function () {
     let questions = null; // Initialize questions to null
 
