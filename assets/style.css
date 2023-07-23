@@ -137,8 +137,10 @@ h1 {
 
 label {
     display: flex;
-    align-items: center;
     margin-bottom: 5px;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 
 button {
