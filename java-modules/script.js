@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const usernameInput = document.getElementById('username');
     const usernameContainer = document.getElementById('username-container');
-    const usernameLabel = document.getElementById('username-label');
     const startButton = document.getElementById('start');
     const scoreContainer = document.getElementById('score-container');
     const scoreValueElement = document.getElementById('score-value');
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.addEventListener('click', function () {
         const username = usernameInput.value.trim();
         if (username) {
-            usernameLabel.textContent = `Username: ${username}`;
             usernameContainer.style.display = 'none'; // Hide the username container
             startButton.style.display = 'none';
             scoreContainer.style.display = 'block';
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Failed to load questions:", err);
             });
     }
-
+    
     function startQuiz() {
         let score = 0;
         let correctAnswers = 0;
