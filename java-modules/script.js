@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function fetchQuestionsAndStartQuiz() {
         // Fetch the questions from the questions.js file
-        fetch('/java-modules/questions.js')
+        fetch('java-modules/questions.js')
             .then((response) => response.text())
             .then((data) => {
                 // Evaluate the dynamically loaded script
