@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let questions = null; // Initialize questions to null
 
     // Dynamic import to load the questions module
-    import('/java-modules/questions.js')
+    import('java-modules/questions.js')
         .then((module) => {
             questions = module.default; // Assign the questions array from the module
             // Call the function to start the quiz after loading the questions
