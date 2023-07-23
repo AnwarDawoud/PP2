@@ -16,7 +16,7 @@
             </div>
             <h1>Geographical Science Questionnaire</h1>
         </header>
-         <div class="quiz-container" style="background-image: url('assets/media/pexels-photo-7634760.png');">
+        <div class="quiz-container" style="background-image: url('assets/media/pexels-photo-7634760.png');">
             <div class="container">
                 <div id="username-container">
                     <label for="username">Username:</label>
@@ -27,7 +27,6 @@
                     <span id="username-label"></span>
                     <span id="score">Score: <span id="score-value">0</span></span>
                 </div>
-                <div id="feedback"></div>
                 <div id="question-container"></div>
                 <div id="button-container">
                     <button id="submit" style="display: none;">Submit Answer</button>
@@ -36,6 +35,7 @@
                     <!-- Stars container for the pluming stars effect -->
                     <div id="stars-container"></div>
                 </div>
+                <div id="feedback"></div> <!-- Feedback will be displayed here -->
             </div>
         </div> <!-- End of quiz-container -->
 
@@ -47,7 +47,7 @@
             <span id="wrong-answers">Wrong: 0</span>
         </div>
     </footer>
-    <script src="assets/script.js"></script>
+    <script src="java-modules/script.js" type="module"></script>
 </body>
 
 </html>
