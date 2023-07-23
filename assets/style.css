@@ -61,8 +61,17 @@ h1 {
 #username-container {
     text-align: center;
     margin-bottom: 20px;
+    background: #cd6401;
+    border-radius: 20px;
 }
 
+#username {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #ff7c00;
+    border-radius: 20px;
+    
+}
 #score-container {
     display: flex;
     justify-content: space-between;
@@ -120,16 +129,36 @@ h1 {
     text-transform: uppercase;
 }
 
-.option {
+.option{    
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-bottom: 7.5px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 button {
     display: block;
     margin: 0 auto;
     margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    border-radius: 20px;
+}
+
+#start {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    background: #ff9400;
+    border-radius: 20px;
 }
 
 .hide {
@@ -183,7 +212,7 @@ footer {
 
 
 #score-message {
-    border-radius:35%;
+    border-radius:50px;
     background: #f0f0f0;
     color: green;}
 }
