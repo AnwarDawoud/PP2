@@ -195,25 +195,19 @@ document.addEventListener("DOMContentLoaded", function () {
             scoreMessage.textContent = `Your final score is ${score} out of 5.`;
             scoreMessage.id = "score-message";
             document.getElementById('question-container').appendChild(scoreMessage);
-
+             // Remove the feedback element itself
+            const feedbackElement = document.querySelector('.feedback');
+                if (feedbackElement) {
+                feedbackElement.remove();
+                }
             if (score >= 4) {
                 scoreMessage.style.color = "green"; // Set to green for scores greater than or equal to 4
                 scoreMessage.textContent += ' Well done! Cognates!';
                 showStars(); // Show the pluming stars effect
 
-                // Remove the feedback element itself
-                const feedbackElement = document.querySelector('.feedback');
-                if (feedbackElement) {
-                    feedbackElement.remove();
-                }
+                
             } else {
                 scoreMessage.style.color = "red"; // Set to red for scores less than 4
-
-                // Remove the feedback element itself
-                const feedbackElement = document.querySelector('.feedback');
-                if (feedbackElement) {
-                    feedbackElement.remove();
-                }
 
                 // Create the "Retake Quiz" button
                 const retakeQuizButton = document.createElement('button');
