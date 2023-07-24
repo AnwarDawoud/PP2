@@ -215,13 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     feedbackElement.remove();
                 }
 
-                // Remove the "Please select an answer!" message
-                const noAnswerFeedback = document.querySelector('.no-answer-feedback');
-                if (noAnswerFeedback) {
-                    noAnswerFeedback.remove();
-                }
-
-
                 // Create the "Retake Quiz" button
                 const retakeQuizButton = document.createElement('button');
                 retakeQuizButton.textContent = 'Retake Quiz';
