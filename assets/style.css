@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -25,7 +24,7 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 2px solid #ccc;
+    border: 2px solid #de8f8f;
     padding: 20px;
     margin-bottom: 20px;
     min-height: 300px;
@@ -61,14 +60,19 @@ h1 {
 #username-container {
     text-align: center;
     margin-bottom: 20px;
-    background: #cd6401;
+    background: #a5a8a7;
     border-radius: 20px;
 }
-
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    background: #898989;
+    border-radius: 20px;
+}
 #username {
     text-align: center;
     margin-bottom: 20px;
-    background: #ff7c00;
+    background: #898989;
     border-radius: 20px;
     
 }
@@ -81,11 +85,18 @@ h1 {
 #score {
     background:#f0f0f0;
     margin-bottom: autopx;
+    border: 1px solid #000;
+    border-radius:10px; 
+      
 }
 #score-value {
     background:#f0f0f0;
     margin-bottom: 15px;
-}
+    font-size: 12px ;
+    margin: 8px;
+    border-radius:15px;
+  }
+
 
 /* Quiz section styles */
 .correct-feedback,
@@ -100,19 +111,24 @@ h1 {
 
 #question-container h2 {
     font-size: 24px;
-    color: #000;
+    color: #f0f0f0;
     margin-bottom: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    border-color: #000
 }
 
 .question{
     font-size: 16px;
-    color: #070000;
+    color: #000;
     margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    
+    background:#f0f0f0;
+    border-radius: 10px;
+    border-color:  black;
+    border: 1px solid #000;
+    box-shadow: 0 9px 19px rgb(3 0 0);
 }
 
 .options {
@@ -141,6 +157,10 @@ label {
     flex-direction: column;
     align-content: space-around;
     flex-wrap: wrap;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000000;
+    border-radius: 5px
 }
 
 button {
@@ -159,7 +179,7 @@ button {
     margin-bottom: 15px;
     text-align: center;
     margin-bottom: 20px;
-    background: #ff9400;
+    background: #ff7c00;
     border-radius: 20px;
 }
 
