@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Failed to load questions:", err);
             });
     }
-    
+
     function startQuiz() {
         let score = 0;
         let correctAnswers = 0;
@@ -200,18 +200,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 scoreMessage.style.color = "green"; // Set to green for scores greater than or equal to 4
                 scoreMessage.textContent += ' Well done! Cognates!';
                 showStars(); // Show the pluming stars effect
-                // Remove the correct and incorrect feedback elements
-                const quizContainer = document.querySelector('.quiz-container');
-                const correctFeedback = quizContainer.querySelector('.correct-feedback');
-                const incorrectFeedback = quizContainer.querySelector('.incorrect-feedback');
-                if (correctFeedback) {
-                    correctFeedback.remove();
-                }
-                if (incorrectFeedback) {
-                    incorrectFeedback.remove();
+
+                // Remove the feedback element itself
+                const feedbackElement = document.querySelector('.feedback');
+                if (feedbackElement) {
+                    feedbackElement.remove();
                 }
             } else {
                 scoreMessage.style.color = "red"; // Set to red for scores less than 4
+
+                // Remove the feedback element itself
+                const feedbackElement = document.querySelector('.feedback');
+                if (feedbackElement) {
+                    feedbackElement.remove();
+                }
+
+                // Remove the "Please select an answer!" message
+                const noAnswerFeedback = document.querySelector('.no-answer-feedback');
+                if (noAnswerFeedback) {
+                    noAnswerFeedback.remove();
+                }
+
 
                 // Create the "Retake Quiz" button
                 const retakeQuizButton = document.createElement('button');
