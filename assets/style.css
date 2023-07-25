@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #EDEDED;
 }
 
 /* Layout styles */
@@ -17,7 +17,7 @@ body {
     position: fixed;
     left: 0;
     right: 0;
-    background-color: #ffffff;
+    background-color: #EDEDED;
     background-size: cover;
     background-position: center;
     filter: contrast(1.2) brightness(1.2);
@@ -33,17 +33,17 @@ body {
 /* Quiz section styles */
 .quiz-container .correct-feedback {
     color: green;
-     background-color: #f0f0f0;
+     background-color: #EDEDED;
 }
 
 .quiz-container .incorrect-feedback {
     color: red;
-     background-color: #f0f0f0;
+     background-color: #EDEDED;
 }
 
 .quiz-container .no-answer-feedback {
     color: blue;
-     background-color: #f0f0f0;
+     background-color: #EDEDED;
 }
 
 .container {
@@ -83,14 +83,14 @@ p {
     margin-bottom: 15px;
 }
 #score {
-    background:#f0f0f0;
+    background:#EDEDED;
     margin-bottom: autopx;
     border: 1px solid #000;
     border-radius:10px; 
       
 }
 #score-value {
-    background:#f0f0f0;
+    background:#EDEDED;
     margin-bottom: 15px;
     font-size: 12px ;
     margin: 8px;
@@ -124,7 +124,7 @@ p {
     margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
-    background:#f0f0f0;
+    background:#EDEDED;
     border-radius: 10px;
     border-color:  black;
     border: 1px solid #000;
@@ -158,7 +158,7 @@ label {
     align-content: space-around;
     flex-wrap: wrap;
     color: #000;
-    background: #fff;
+    background: #EDEDED;
     border: 1px solid #000000;
     border-radius: 5px
 }
@@ -169,7 +169,7 @@ button {
     margin-bottom: 15px;
     text-align: center;
     margin-bottom: 20px;
-    background: #f0f0f0;
+    background: #EDEDED;
     border-radius: 20px;
 }
 
@@ -189,7 +189,7 @@ button {
 
 /* Header and footer styles */
 header {
-    background-color: #f0f0f0;
+    background-color: #EDEDED;
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -205,7 +205,7 @@ header {
 }
 
 footer {
-    background-color: #f0f0f0;
+    background-color: #EDEDED;
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -229,7 +229,7 @@ footer {
 
 #wrong-answers {
     margin-left: 10px;
-    color: red
+    color: #ca0606;
 }
 
 
