@@ -63,8 +63,6 @@ h1 {
     background: #a5a8a7;
     border-radius: 20px;
 }
-
-}
 #username {
     text-align: center;
     margin-bottom: 20px;
@@ -80,7 +78,7 @@ h1 {
 }
 #score {
     background:#EDEDED;
-    margin-bottom: autopx;
+    margin-bottom: auto;
     border: 1px solid #000;
     border-radius:10px; 
       
@@ -239,7 +237,7 @@ footer {
 /* For small devices (e.g., smartphones) */
 @media only screen and (max-width: 600px) {
     .quiz-container {
-        max-width: auto;
+        max-width: 95%;
         height: auto;
         margin-top: 85px;
     }
